@@ -9,7 +9,7 @@ export default {
 	resolve() {
 		const users = userModel.find().exec()
 		if (!users) {
-			throw new Error('Error getting users')
+			throw new Error('---Error getting users---')
 		}
 		return users
 	}

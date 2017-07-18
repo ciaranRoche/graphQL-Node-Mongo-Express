@@ -24,6 +24,6 @@ export default {
 			{ $set: { ...params.data } },
 			{ new: true }
 		)
-		.catch(err => new Error('Couldn\'t Update User data, ', err));
+		.catch(err => new Error('---Couldn\'t Update User data--- ', err));
 	}
 }

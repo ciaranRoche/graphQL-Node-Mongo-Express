@@ -17,7 +17,7 @@ export default {
 		const pModel = new PostModel(params.data);
 		const newPost = pModel.save();
 		if (!newPost) {
-			throw new Error('Error adding post');
+			throw new Error('---Error adding post---');
 		}
 		return newPost
 	}

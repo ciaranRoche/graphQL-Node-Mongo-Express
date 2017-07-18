@@ -17,7 +17,7 @@ export default {
 		const uModel = new UserModel(params.data);
 		const newUser = uModel.save();
 		if (!newUser) {
-			throw new Error('Error adding user');
+			throw new Error('---Error adding user---');
 		}
 		return newUser
 	}
