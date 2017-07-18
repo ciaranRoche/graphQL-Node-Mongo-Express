@@ -1,27 +1,30 @@
 import express from 'express';
-import mongoose from 'mongoose';
+// before adding graphql API
 import graphqlHTTP from 'express-graphql';
+// after adding graphql api
+import mongoose from 'mongoose';
 
-// import schema from './graphql';
-
+//Later
+import schema from './graphql'
 const app = express();
 
-mongoose.connect('mongodb://muldoon:muldoon@ds161022.mlab.com:61022/graphql-api');
+mongoose.connect('mongodb://madhav:madhav@ds163699.mlab.com:63699/testing');
 const db = mongoose.connection
-db.on('error', () => console.log('---failed to connect to database---'))
-	.once('open', () => console.log('+++connected to database+++'))
+db.on('error', () => console.log('Failed to connect to DB.'))
+	.once('open', () => console.log('Connected to DB. '))
 
 
 app.get('/', (req, res) => {
-  res.send("hello world, this is graphql api.");
+  res.send('Hello World..');
 });
 
-// app.use('/graphql', graphqlHTTP(()=>({
-//   schema,
-//   graphql: true,
-//   pretty: true
-// })));
+// GraphQL API
+app.use('/graphql', graphqlHTTP(() => ({
+  schema,
+  graphiql: true,
+  pretty: true
+})))
 
 app.listen(3000, () => {
-  console.log("+++graphql api running on port 3000+++")
+  console.log('GraphQL server running at port 3000...')
 })

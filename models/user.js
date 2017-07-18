@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+mongoose.Promise = Promise;
 
 const Schema = mongoose.Schema
 

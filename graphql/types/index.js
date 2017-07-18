@@ -1,9 +1,7 @@
-import {userType, userInputType} from './user';
-import {postType, postInputType} from './post';
+import userType from './user';
+import postType from './user';
 
-export default{
+export default {
   userType,
-  userInputType,
-  postType,
-  postInputType
-};
+  postType
+}
